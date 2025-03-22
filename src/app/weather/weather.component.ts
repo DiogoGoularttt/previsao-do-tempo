@@ -11,13 +11,46 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
   imports: [FormsModule, CommonModule, FaIconComponent],
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.css'],
-})  
+})
 export class WeatherComponent {
   cityName: string = '';
   weatherData: any;
+  faMagnifyingGlass = faMagnifyingGlass;
 
-  faMagnifyingGlass = faMagnifyingGlass; 
   constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.getUserLocation();
+  }
+
+  getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+          this.getWeatherByCoords(lat, lon);
+        },
+        (error) => {
+          console.error('Erro ao obter localização:', error);
+          alert(
+            'Não foi possível obter sua localização. Por favor, habilite a permissão de localização.'
+          );
+        }
+      );
+    } else {
+      alert('Geolocalização não é suportada pelo seu navegador.');
+    }
+  }
+
+  getWeatherByCoords(lat: number, lon: number) {
+    const apiKey = '45f8d6a48ac2279c8954243037bb47b8';
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt`;
+
+    this.http.get(weatherUrl).subscribe((weatherResponse: any) => {
+      this.weatherData = weatherResponse;
+    });
+  }
 
   searchWeather() {
     const apiKey = '45f8d6a48ac2279c8954243037bb47b8';
