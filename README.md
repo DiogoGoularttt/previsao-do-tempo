@@ -29,10 +29,10 @@ Este repositório contém a minha solução para o desafio técnico proposto par
 ## Como Executar o Projeto
 
 1. Clone este repositório:
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone https://github.com/DiogoGoularttt/previsao-do-tempo.git
 
 2. Navegue até a pasta do projeto:
-   cd nome-do-repositorio
+   cd previsao-do-tempo
 
 3. Instale as dependências:
    npm install
