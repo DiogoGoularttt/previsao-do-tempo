@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../environments/environment';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
@@ -44,7 +45,7 @@ export class WeatherComponent {
   }
 
   getWeatherByCoords(lat: number, lon: number) {
-    const apiKey = '45f8d6a48ac2279c8954243037bb47b8';
+    const apiKey = environment.openWeatherMapApiKey;
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=pt`;
 
     this.http.get(weatherUrl).subscribe((weatherResponse: any) => {
