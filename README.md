@@ -23,6 +23,7 @@ Este repositório contém a minha solução para o desafio técnico proposto par
 - Exibição dos dados em uma interface limpa e intuitiva.
 - Funcionalidade de busca por cidade.
 - Responsividade para diferentes dispositivos (mobile, tablet, desktop).
+- Exibição da previsão do tempo com base na localização do usuário ao abrir o site.
 
 ---
 
