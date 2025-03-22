@@ -12,7 +12,7 @@ h1 {
   padding: 1rem 0;
   text-align: center;
   color: aliceblue;
-  font-size: 2.5rem; /* Reduzido para telas menores */
+  font-size: 2.5rem;
 }
 
 .search-container {
@@ -26,7 +26,7 @@ h1 {
 .input-container {
   position: relative;
   width: 100%;
-  max-width: 500px; /* Limita a largura máxima */
+  max-width: 500px;
 }
 
 input {
@@ -73,20 +73,20 @@ button {
 
 .responses h2 {
   color: #fff;
-  font-size: 2rem; /* Reduzido para telas menores */
+  font-size: 2rem;
   padding-bottom: 1rem;
   font-weight: 800;
 }
 
 .responses .temp {
   color: #fff;
-  font-size: 1.75rem; /* Reduzido para telas menores */
+  font-size: 1.75rem;
   font-weight: 600;
 }
 
 .others {
   display: grid;
-  grid-template-columns: 1fr; /* 1 coluna por padrão */
+  grid-template-columns: 1fr;
   padding-top: 2rem;
   gap: 1rem;
   text-align: center;
@@ -115,7 +115,6 @@ button {
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
 }
 
-/* Media Queries para telas maiores */
 @media (min-width: 768px) {
   h1 {
     font-size: 3rem;
@@ -130,7 +129,7 @@ button {
   }
 
   .others {
-    grid-template-columns: 1fr 1fr; /* 2 colunas para telas maiores */
+    grid-template-columns: 1fr 1fr;
   }
 
   .card {
@@ -153,6 +152,6 @@ button {
   }
 
   .others {
-    grid-template-columns: 1fr 1fr; /* Mantém 2 colunas para telas muito grandes */
+    grid-template-columns: 1fr 1fr;
   }
 }
