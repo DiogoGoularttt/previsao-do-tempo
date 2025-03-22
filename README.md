@@ -44,3 +44,6 @@ Este repositório contém a minha solução para o desafio técnico proposto par
 5. Abra o navegador e acesse:
    http://localhost:4200/
 
+## Projeto Online!
+   O projeto está hospedado na Vercel e pode ser testado diretamente pelo link abaixo:
+   🔗 Acesse o projeto online
