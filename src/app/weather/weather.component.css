@@ -1,0 +1,158 @@
+.weather-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  background: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  padding: 1rem 0;
+  text-align: center;
+  color: aliceblue;
+  font-size: 2.5rem; /* Reduzido para telas menores */
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Limita a largura máxima */
+}
+
+input {
+  font-size: 1rem;
+  width: 100%;
+  color: #ffffff;
+  padding: 15px 50px 15px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 999px;
+  background: transparent;
+  outline: none;
+}
+
+input::placeholder {
+  color: #ffffff;
+}
+
+button {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  color: #fff;
+  cursor: pointer;
+}
+
+.responses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff1f;
+  padding: 3rem;
+  margin: 1rem;
+  border-radius: 25px;
+}
+
+.responses h2 {
+  color: #fff;
+  font-size: 2rem; /* Reduzido para telas menores */
+  padding-bottom: 1rem;
+  font-weight: 800;
+}
+
+.responses .temp {
+  color: #fff;
+  font-size: 1.75rem; /* Reduzido para telas menores */
+  font-weight: 600;
+}
+
+.others {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 coluna por padrão */
+  padding-top: 2rem;
+  gap: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.284);
+  padding: 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+.response {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #fff;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Media Queries para telas maiores */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .responses h2 {
+    font-size: 2.5rem;
+  }
+
+  .responses .temp {
+    font-size: 2.25rem;
+  }
+
+  .others {
+    grid-template-columns: 1fr 1fr; /* 2 colunas para telas maiores */
+  }
+
+  .card {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .response {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responses {
+    padding: 3rem;
+    margin: 0 10rem;
+  }
+
+  .others {
+    grid-template-columns: 1fr 1fr; /* Mantém 2 colunas para telas muito grandes */
+  }
+}

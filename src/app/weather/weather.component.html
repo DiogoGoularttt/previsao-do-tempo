@@ -1,0 +1,46 @@
+<div class="weather-container">
+  <h1>Previsão do Tempo</h1>
+  <div class="search-container">
+    <form (ngSubmit)="searchWeather()">
+      <div class="input-container">
+        <input
+          type="text"
+          [(ngModel)]="cityName"
+          name="cityName"
+          placeholder="Digite o nome da cidade"
+          required
+        />
+        <button type="submit">
+          <fa-icon
+            [icon]="faMagnifyingGlass"
+            size="2x"
+            class="search-icon"
+          ></fa-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="responses" *ngIf="weatherData">
+    <h2>{{ weatherData.name }}</h2>
+    <p class="temp">{{ weatherData.main.temp | number : "1.0-0" }}°C</p>
+    <div class="others">
+      <div class="card">
+        <p class="title">Condição</p>
+        <p class="response">{{ weatherData.weather[0].description }}</p>
+      </div>
+      <div class="card">
+        <p class="title">Sensação Térmica</p>
+        <p class="response">{{ weatherData.main.feels_like | number : "1.0-0" }}°C</p>
+      </div>
+      <div class="card">
+        <p class="title">Mínima</p>
+        <p class="response">{{ weatherData.main.temp_min | number : "1.0-0" }}°C</p>
+      </div>
+      <div class="card">
+        <p class="title">Máxima</p>
+        <p class="response">{{ weatherData.main.temp_max | number : "1.0-0" }}°C</p>
+      </div>
+    </div>
+  </div>
+</div>
